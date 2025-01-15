@@ -1,14 +1,12 @@
-import memeImg from "../assets/takeMoneh.jpg"
 
-
-export default function Meme()
+export default function Meme(props)
 {
 
     return (
         <div className="meme-container">
-            <h3 className="topText">TOP TEXT</h3>
-            <img src={memeImg} alt="Meme" />
-            <h3 className="bottomText">BOTTOM TEXT</h3>
+            <h3 className="topText">{props.meme.topText}</h3>
+            <img src={props.meme.imageUrl} alt="Meme" />
+            <h3 className="bottomText">{props.meme.bottomText}</h3>
         </div>
     )
 }

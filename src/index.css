@@ -1,3 +1,4 @@
+/* General styles for all screen sizes */
 *
 {
   margin: 0;
@@ -9,7 +10,6 @@ body
 {
   background-color: #282835;
   color: rgb(254, 255, 240);
-
 }
 
 #root
@@ -17,8 +17,11 @@ body
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-
   min-height: 100vh;
+  max-width: 90%;
+  margin: auto;
+  background-color: #2a2c3a;
+  box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.098);
 }
 
 header
@@ -27,7 +30,6 @@ header
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
-
   background-color: #345b6c;
   padding: 1rem 40px;
 }
@@ -43,18 +45,18 @@ main
   margin: 1rem 2rem;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   align-items: center;
-
   gap: 2rem;
-
 }
 
 main .meme-container img
 {
-  width: 100%;
+  width: 70%;
+  max-height: 500px;
+
 }
+
 
 main .meme-container
 {
@@ -64,29 +66,25 @@ main .meme-container
   align-items: center;
 }
 
-main .meme-container .topText
+main .meme-container .topText,
+main .meme-container .bottomText
 {
   position: absolute;
-  top: 10px;
   text-align: center;
   width: 100%;
-
   text-shadow: 0 0 8px #000000;
-
   font-size: 2rem;
+}
+
+main .meme-container .topText
+{
+  top: 10px;
 }
 
 main .meme-container .bottomText
 {
-  position: absolute;
   bottom: 10px;
-  text-align: center;
-  width: 100%;
-  text-shadow: 0 0 8px #000000;
-
-  font-size: 2rem;
 }
-
 
 .input-container
 {
@@ -100,8 +98,6 @@ main .meme-container .bottomText
   grid-column: span 1;
 }
 
-
-
 .input-container button:hover
 {
   background-color: #345b6cb4;
@@ -114,16 +110,12 @@ main .meme-container .bottomText
 
 .input-container button
 {
-
   color: white;
   background-color: #345b6c;
-
   grid-column: span 2;
   padding: 1rem;
   font-size: 1.3rem;
-
   border-radius: 10px;
-
   border: none;
   outline: none;
 }
@@ -131,9 +123,7 @@ main .meme-container .bottomText
 .inputs
 {
   background-color: inherit;
-
   font-size: 1.5rem;
-
   display: flex;
   flex-direction: column;
   gap: 11px;
@@ -141,14 +131,11 @@ main .meme-container .bottomText
 
 .inputs input
 {
-
   color: white;
   font-size: 1.5rem;
-
   background-color: inherit;
   border: solid 1px #d1e2ea;
   padding: 1rem;
-
   border-radius: 10px;
 }
 
@@ -158,4 +145,24 @@ footer
   padding: 2rem;
   font-size: 1.2rem;
   text-align: center;
+}
+
+@media (max-width: 768px)
+{
+  .input-container
+  {
+    grid-template-columns: 1fr;
+  }
+
+  .input-container button
+  {
+    grid-column: span 1;
+  }
+
+  main .meme-container img
+  {
+    max-height: 290px;
+  }
+
+
 }

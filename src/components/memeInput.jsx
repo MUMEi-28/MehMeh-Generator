@@ -1,9 +1,6 @@
-export default function MemeInput()
+
+export default function MemeInput(props)
 {
-    function OnGetNewMeme()
-    {
-        console.log("NEW MEME")
-    }
     return (
 
         <div className="input-container">
@@ -11,13 +8,25 @@ export default function MemeInput()
                 <label htmlFor="">
                     Top Text
                 </label>
-                <input type="text" value="Shut up and" />
+                <input
+                    type="text"
+                    placeholder="Shut up and"
+                    name="topText"
+                    onChange={props.handleChange}
+                    value={props.meme.topText}
+                />
             </p>
             <p className="inputs">
                 <label htmlFor="">Bottom Text</label>
-                <input type="text" value="Take my money" />
+                <input
+                    type="text"
+                    placeholder="Take my money"
+                    name="bottomText"
+                    onChange={props.handleChange}
+                    value={props.meme.bottomText}
+                />
             </p>
-            <button onClick={OnGetNewMeme} >Get a new meme image</button>
+            <button onClick={props.getMemeImage} >Get a new meme image</button>
 
         </div>
     )
