@@ -1,68 +1,161 @@
-:root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
+*
+{
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body
+{
+  background-color: #282835;
+  color: rgb(254, 255, 240);
+
+}
+
+#root
+{
   display: flex;
-  place-items: center;
-  min-width: 320px;
+  flex-direction: column;
+  justify-content: space-between;
+
   min-height: 100vh;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+header
+{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  background-color: #345b6c;
+  padding: 1rem 40px;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+header>img
+{
+  height: 5rem;
+  margin-right: 1rem;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+main
+{
+  margin: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+
+  justify-content: center;
+  align-items: center;
+
+  gap: 2rem;
+
+}
+
+main .meme-container img
+{
+  width: 100%;
+}
+
+main .meme-container
+{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main .meme-container .topText
+{
+  position: absolute;
+  top: 10px;
+  text-align: center;
+  width: 100%;
+
+  text-shadow: 0 0 8px #000000;
+
+  font-size: 2rem;
+}
+
+main .meme-container .bottomText
+{
+  position: absolute;
+  bottom: 10px;
+  text-align: center;
+  width: 100%;
+  text-shadow: 0 0 8px #000000;
+
+  font-size: 2rem;
+}
+
+
+.input-container
+{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+
+.input-container .inputs
+{
+  grid-column: span 1;
+}
+
+
+
+.input-container button:hover
+{
+  background-color: #345b6cb4;
+}
+
+.input-container button:active
+{
+  background-color: #345b6c73;
+}
+
+.input-container button
+{
+
+  color: white;
+  background-color: #345b6c;
+
+  grid-column: span 2;
+  padding: 1rem;
+  font-size: 1.3rem;
+
+  border-radius: 10px;
+
+  border: none;
+  outline: none;
+}
+
+.inputs
+{
+  background-color: inherit;
+
+  font-size: 1.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.inputs input
+{
+
+  color: white;
+  font-size: 1.5rem;
+
+  background-color: inherit;
+  border: solid 1px #d1e2ea;
+  padding: 1rem;
+
+  border-radius: 10px;
+}
+
+footer
+{
+  background-color: #345b6c;
+  padding: 2rem;
+  font-size: 1.2rem;
+  text-align: center;
 }
